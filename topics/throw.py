@@ -8,13 +8,13 @@ def solve_method(**kwargs):
     equations = [omath.get_sub_equation(throw.fx1.value,kwargs), omath.get_sub_equation(throw.fx2.value,kwargs)
                      , omath.get_sub_equation(throw.fx3.value,kwargs), omath.get_sub_equation(throw.fy1.value,kwargs), omath.get_sub_equation(throw.fy2.value,kwargs),
                      omath.get_sub_equation(throw.fy3.value,kwargs)]
-    ###
+
     #print(fx1(kwargs))
     #print(fx2(kwargs))
     #print(fx3(kwargs))
     #print(fy2(kwargs))
     #print(fy1(kwargs))
-    ###
+
     ans = sympy.solve(equations)
     print(ans)
 

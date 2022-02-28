@@ -1,6 +1,7 @@
 import mpmath
+import sympy
 
-from topics import throw
+from topics import rotational_movement, throw, rotational_movement2
 
 if __name__ == '__main__':
-    ans = throw.solve_method(x=2.1, i=mpmath.radians(60), v0=6.4, ay=-9.81)
+    ans = rotational_movement2.solve_method(w0=500/60, t=30, w=200)

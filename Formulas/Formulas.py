@@ -17,9 +17,30 @@ class _Throw(Enum):
     fy2 = "y = v0 * sin(i) * t + 1/2 * ay * t**2 "
     fy3 = "y = v0y * t + 1/2 * ay * t**2"
 
+class _Rot_movement(Enum):
+    tang_vel = "v = w * r"
+    tang_acc_parallel = "tangA = a * r"
+    centripetal_acc_1 = "centA = w**2 * r"
+    centripetal_acc_2 = "centA = 4 * pi **2 * r * 1/T**2"
+    centripetal_acc_3 = "centA = v**2 / r "
+
 class _Vector(Enum):
     sum = "l**2 = x**2 + y**2"
+
+class _Newtons_laws(Enum):
+    nwl2 = "F = m*a"
+
+class _Rot_movement2(Enum):
+    #o = posisjonsvinkel
+    #w = vinkelfart
+    #a = vinkelakselerasjon
+    f_const = "o = w * t"
+    f1 = "w = w0 + a * t"
+    f2 = "2 * o * t = w0 + w"
+    f3 = "o = w0 * t + 1/2 * a*t**2"
+    f4 = "w**2-w0**2 = 2 * a * o"
 
 class Formula(Enum):
     rect_motion = _Rectiliniear_motion
     throw = _Throw
+    rot_movement = _Rot_movement
