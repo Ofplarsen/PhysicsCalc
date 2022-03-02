@@ -39,6 +39,16 @@ class _Rot_movement2(Enum):
     f2 = "2 * o * t = w0 + w"
     f3 = "o = w0 * t + 1/2 * a*t**2"
     f4 = "w**2-w0**2 = 2 * a * o"
+    tq = "tq = I * acm"
+    acm = "acm = a * r"
+    vcm = "vcm = w * r"
+
+class _Electrisity(Enum):
+    f = "F = k * q1 /r**2 * q2/r**2"
+    e = "E = F / q"
+    e2 = "E = k*Q/R**2"
+    v = "V = k*Q/r"
+
 
 class Formula(Enum):
     rect_motion = _Rectiliniear_motion

@@ -1,10 +1,18 @@
 import sys
 import mpmath
-import omath
+from omath import Solver as omath
 from Formulas.Formulas import _Rectiliniear_motion as rect
 
 sys.modules['sympy.mpmath'] = mpmath
 from sympy import *
+
+
+def solve_method(**kwargs):
+    equations = [omath.get_sub_equation(rect.v1.value, kwargs), omath.get_sub_equation(rect.v2.value, kwargs)
+        , omath.get_sub_equation(rect.v3.value, kwargs), omath.get_sub_equation(rect.v4.value, kwargs)]
+
+    ans = solve(equations)
+    print(ans)
 
 class RectilinearMotion:
 
