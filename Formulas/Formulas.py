@@ -49,6 +49,14 @@ class _Electrisity(Enum):
     e2 = "E = k*Q/R**2"
     v = "V = k*Q/r"
 
+class _ElPotAndMovEnergy(Enum):
+    up1 = "Up1 = k * q1/r1 * q2/r1"
+    up2 = "Up2 = k * q1/r2 * q2/r2"
+    uk1 = "Uk1 = 1/2*m1*v1**2"
+    uk2 = "Uk2 = 1/2*m2*v2**2"
+    u1 = "U = Up1 + Uk1"
+    u2 = "U = Up2 + Uk2"
+    u3 = "Up1 + Uk1 = Up2 + Uk2"
 
 class Formula(Enum):
     rect_motion = _Rectiliniear_motion
