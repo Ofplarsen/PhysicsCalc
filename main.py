@@ -1,8 +1,21 @@
+import Formulas.Formulas
+
 import mpmath
 import sympy
+from omath import Solver as omath
 
-from topics import rotational_movement, throw, rotational_movement2, rectilinear_motion, El_mag_Energy
+
+def solve_method(theme, **kwargs):
+    equations = []
+    for enum in theme:
+        equations.append(omath.get_sub_equation(enum.value, kwargs))
+
+    return sympy.solve(equations)
+
+
+def solve(theme, **kwargs):
+    return solve_method(theme, **kwargs)
+
 
 if __name__ == '__main__':
-    ans =El_mag_Energy.solve_method(q1=1.6*10**(-19), q2=1.6*10**(-19), r1=10**(-10), r2=2*10**(-10), v1=3*10**6, k=8.99*10**9, m1=9.11*10**(-31), m2=9.11*10**(-31))
-    print(ans)
+    print(solve(Formulas.Formulas._Block_incline_friction, ))

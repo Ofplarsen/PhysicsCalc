@@ -1,18 +1,30 @@
 import sys
 import mpmath
-import sympy
+import numpy as np
 
-sys.modules['sympy.mpmath'] = mpmath
-from sympy import *
+if __name__ == '__main__':
+    dataSolid = np.array([0.299*2, 0.298*2, 0.293*2, 0.300*2, 0.299*2, 0.295*2])
 
+    dataHul = np.array([0.235*2, 0.236*2, 0.230*2, 0.234*2, 0.238*2, 0.238*2])
 
-def test(formula, **kwargs):
-    expr = sympy.sympify(formula)
-    return expr.evalf(subs=kwargs)
+    stdSolid = np.std(dataSolid, ddof=1)
 
-def solve(formula):
-    return 0
+    stdHul = np.std(dataHul, ddof=1)
 
-def svt(formula):
-    expr = sympy.sympify(formula)
-    return expr.evalf(subs=kwargs)
+    stdErrSolid = stdSolid / np.sqrt(np.size(dataSolid))
+
+    stdErrHul = stdHul / np.sqrt(np.size(dataHul))
+
+    meanSolid = np.mean(dataSolid)
+
+    meanHul = np.mean(dataHul)
+    print("Solid cylinder:")
+    print("Mean: " + str(meanSolid))
+    print("Std: " + str(stdSolid))
+    print("StdErr: " + str(stdErrSolid))
+
+    print("")
+    print("Hollow cylinder")
+    print("Mean: " + str(meanHul))
+    print("Std: " + str(stdHul))
+    print("StdErr: " + str(stdErrHul))

@@ -1,5 +1,10 @@
 from enum import Enum
 
+class _Block_incline_friction(Enum):
+    y = "N - m*g * cos(i) = 0"
+    x = "m * g * sin(i) - f = m * a"
+    f = "f = u * N"
+    f2 = "f = u * m * g * cos(i)"
 
 class _Rectiliniear_motion(Enum):
     svt = "x = v * t"

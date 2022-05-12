@@ -16,7 +16,7 @@ def solve_method(**kwargs):
     #print(fy1(kwargs))
 
     ans = sympy.solve(equations)
-    print(ans)
+    return ans
 
 def fx1(kwargs):
     return omath.solver(throw.fx1.value, kwargs)
